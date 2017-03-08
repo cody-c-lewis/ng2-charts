@@ -78,9 +78,9 @@ var BaseChartDirective = (function () {
         return new Chart(ctx, opts);
     };
     BaseChartDirective.prototype.updateChartData = function (newDataValues) {
-        // if (!this.chart){
-        //     this.refresh();
-        // }
+        if (!this.chart){
+             this.refresh();
+        }
         if (Array.isArray(newDataValues[0].data)) {
             this.chart.data.datasets.forEach(function (dataset, i) {
                 dataset.data = newDataValues[i].data;
